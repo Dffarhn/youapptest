@@ -1,19 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
-@Schema({
-  toJSON: {
-    virtuals: true,
-    versionKey: false,
-    transform: (doc, ret) => {
-      delete ret._id;
-      delete ret.password;
-      return ret;
-    },
-  },
-})
-
-  
+@Schema()
 export class User extends Document {
   @Prop({ required: true })
   username: string;

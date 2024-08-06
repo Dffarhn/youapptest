@@ -7,6 +7,12 @@ export class UserProfileDTO {
   @Expose()
   email: string;
 
+  @Exclude()
+  password: string; 
+
+  @Exclude()
+  _id: string; 
+
   @Expose()
   displayname?: string;
 
@@ -27,6 +33,8 @@ export class UserProfileDTO {
 
   @Expose()
   zodiac?: string;
+
+
 
   constructor(partial: Partial<UserProfileDTO>) {
     Object.assign(this, partial);
